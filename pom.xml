@@ -8,10 +8,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mdsolutions</groupId>
-	<artifactId>my-dream-solutions-jpa</artifactId>
+	<artifactId>mdsolutions-rest-service-provider</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>my-dream-solutions-jpa</name>
-	<description>My Dream Solutions Demo with JPA</description>
+	<name>mdsolutions-rest-service-provider</name>
+	<description>Rest Service Provider for Client</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
