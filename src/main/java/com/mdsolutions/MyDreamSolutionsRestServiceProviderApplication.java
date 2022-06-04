@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MyDreamSolutionsJpaApplication {
+public class MyDreamSolutionsRestServiceProviderApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MyDreamSolutionsJpaApplication.class, args);
+		SpringApplication.run(MyDreamSolutionsRestServiceProviderApplication.class, args);
 	}
 
 }
