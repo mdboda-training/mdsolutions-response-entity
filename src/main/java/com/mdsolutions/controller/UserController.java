@@ -3,6 +3,7 @@ package com.mdsolutions.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,10 +18,15 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	Environment environment;
 
 	@GetMapping("/user/getUsers")
 	public UserDto getUsers(@RequestParam Integer userId) {
-		return userService.getUser(userId);
+		UserDto userDto= userService.getUser(userId);
+		userDto.setMessage("Port: "+environment.getProperty("server.port"));
+		return userDto;
 	}
 
 	@GetMapping("/user/getAllUsers")
