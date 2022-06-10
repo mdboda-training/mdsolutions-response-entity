@@ -8,10 +8,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mdsolutions</groupId>
-	<artifactId>mdsolutions-rest-service-provider</artifactId>
+	<artifactId>mdsolutions-response-entity</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mdsolutions-rest-service-provider</name>
-	<description>Rest Service Provider for Client</description>
+	<name>mdsolutions-response-entity</name>
+	<description>MyDream Solutions Response Entity for Client</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.2</spring-cloud.version>
