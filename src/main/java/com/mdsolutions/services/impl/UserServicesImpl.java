@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 import com.mdsolutions.bo.UserDAO;
 import com.mdsolutions.dto.UserDto;
+import com.mdsolutions.exception.UserException;
 import com.mdsolutions.mapper.UserMapper;
 import com.mdsolutions.repository.UserRepository;
 import com.mdsolutions.services.UserService;
@@ -22,13 +24,13 @@ public class UserServicesImpl implements UserService {
 	private UserMapper userMapper;
 
 	@Override
-	public UserDto getUser(Integer userId) {
+	public UserDto getUser(Integer userId) throws UserException { 
 		UserDto userDto = new UserDto();
 		Optional<UserDAO> optionalUserDao = userRepository.findById(userId);
 		if (!optionalUserDao.isEmpty()) {
 			userDto = userMapper.daoToDto(optionalUserDao.get());
 		} else {
-			userDto.setMessage("User not found with id:" + userId);
+			throw new UserException("Resource not found "+userId, HttpStatus.NOT_FOUND);
 		}
 		return userDto;
 	}
